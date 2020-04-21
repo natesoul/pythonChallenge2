@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+<header>
+  <h1>{{title}}</h1>
+  <div>
+    {{point}} points | By {{author}} | <a href="{{url}}" target="_blank">{{url}}</a>
+</header>
+<main>
+  {% for apple in db %}
+    
+      {% if apple['author'] == None  %}
+        [deleted]
+      {% else %}
+      <div>
+        {{apple['author']}}
+        {% autoescape false %}
+          {{apple['comment']}}
+        {% endautoescape %}
+      </div>
+      {% endif %}
+    <hr>
+  {% endfor %}
+
+</main>
+<body>
+</body>
+
+</html>
