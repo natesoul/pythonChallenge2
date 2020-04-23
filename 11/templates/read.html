@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Reddit Reader
+  </title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body cz-shortcut-listen="true">
+  <header>
+    <h1><a href="/">Reddit Reader</a></h1>
+    <h3>Reading: {{headTitle}}</h3>
+  </header>
+  <main>
+  {% for i in db %}
+    <div>
+      <h3>
+        <a href="{{i['link']}}" target="_blank">{{i['title']}}</a>
+      </h3>
+      <h4>{{i['upvote']}} upvotes · {{i['sort']}}</h4>
+  {% endfor %}
+
+</body>
+
+</html>
